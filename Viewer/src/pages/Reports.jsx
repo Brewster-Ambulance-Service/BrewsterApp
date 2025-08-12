@@ -6,7 +6,8 @@ const Reports = () => {
     { id: 1, name: 'Response Time Analysis', type: 'Performance', lastGenerated: '2 hours ago', status: 'Ready' },
     { id: 2, name: 'Vehicle Efficiency Report', type: 'Operations', lastGenerated: '1 day ago', status: 'Ready' },
     { id: 3, name: 'Monthly Performance Summary', type: 'Executive', lastGenerated: '3 days ago', status: 'Ready' },
-    { id: 4, name: 'Incident Response Report', type: 'Operations', lastGenerated: '1 week ago', status: 'Ready' },
+    { id: 4, name: 'Incident Response Report', type: 'Operations', lastGenerated: '1 week ago', status: 'Unprepared' },
+    { id: 5, name: 'AI prediction report', type: 'Software', lastGenerated: '2 minutes ago', status: 'In-Progress' },
   ];
 
   return (

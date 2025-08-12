@@ -487,6 +487,14 @@ input:checked + .toggle-slider:before {
   background: #d4edda;
   color: #155724;
 }
+.status-badge.unprepared {
+  background: #f8d7da;
+  color: #721c24;
+}
+.status-badge.in-progress {
+  background: #fff3cd;
+  color: #856404;
+}
 
 /* Dashboard Section */
 .dashboard-section {
