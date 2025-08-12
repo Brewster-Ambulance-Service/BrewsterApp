@@ -14,61 +14,44 @@ const Reports = () => {
       <div className="page-header">
         <h1>📈 Reports & Analytics</h1>
         <p>Generate and view comprehensive reports</p>
+        
+
+        <div className="page-actions">
+        <button className="btn-primary">Download Report CSV</button>
       </div>
-      
-      <div className="page-actions">
-        <button className="btn-primary">Generate New Report</button>
-        <button className="btn-secondary">Schedule Report</button>
+
+
       </div>
-      
-      <div className="content-grid">
-        <div className="content-card">
-          <h3>Quick Stats</h3>
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-value">4.2</div>
-              <div className="stat-label">Avg Response Time (min)</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">94%</div>
-              <div className="stat-label">Efficiency Rate</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">156</div>
-              <div className="stat-label">Calls Today</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">12</div>
-              <div className="stat-label">Active Vehicles</div>
-            </div>
-          </div>
+
+      <div className="dashboard-grid">
+        <div className="dashboard-card">
+          <h3>🚑 Active Vehicles</h3>
+          <div className="card-value">12</div>
+          <div className="card-description">Currently responding to calls</div>
         </div>
         
-        <div className="content-card">
-          <h3>Report Categories</h3>
-          <div className="category-list">
-            <div className="category-item">
-              <span className="category-icon">📊</span>
-              <span className="category-name">Performance Reports</span>
-              <span className="category-count">3</span>
-            </div>
-            <div className="category-item">
-              <span className="category-icon">🚑</span>
-              <span className="category-name">Operations Reports</span>
-              <span className="category-count">5</span>
-            </div>
-            <div className="category-item">
-              <span className="category-icon">📋</span>
-              <span className="category-name">Executive Reports</span>
-              <span className="category-count">2</span>
-            </div>
-            <div className="category-item">
-              <span className="category-icon">⚡</span>
-              <span className="category-name">Real-time Reports</span>
-              <span className="category-count">1</span>
-            </div>
-          </div>
+        <div className="dashboard-card">
+          <h3>⏱️ Avg Response Time</h3>
+          <div className="card-value">4.2 min</div>
+          <div className="card-description">Last 24 hours</div>
         </div>
+        
+        <div className="dashboard-card">
+          <h3>📊 Efficiency Score</h3>
+          <div className="card-value">94%</div>
+          <div className="card-description">This month</div>
+        </div>
+        
+        <div className="dashboard-card">
+          <h3>📞 Total Calls</h3>
+          <div className="card-value">156</div>
+          <div className="card-description">Today</div>
+        </div>
+      </div>
+      
+      
+      
+      <div className="content-grid">
         
         <div className="content-card full-width">
           <h3>Recent Reports</h3>
