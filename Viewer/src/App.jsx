@@ -47,7 +47,7 @@ function App() {
 
         <div className={`main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
           <div className="content-header">
-            <button className="menu-toggle" onClick={toggleSidebar}>☰</button>
+           
             <h1>Brewster EMS Dashboard</h1>
 
             <div className="health-chip" title={health.error || ''}>

@@ -252,3 +252,9 @@
   margin-left: 10px;
   pointer-events: none;
 }
+
+  .logo-image { 
+    height: 150px;
+    width:  auto;
+    object-fit: contain;  
+  }

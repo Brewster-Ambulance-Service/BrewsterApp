@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Sidebar.css';
+import BrewsterLogo from '../assets/BrewsterLogo.png';  
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const [expandedItems, setExpandedItems] = useState(new Set());
@@ -80,11 +81,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <div className="sidebar-header">
-        <h2>Brewster EMS</h2>
-        <button className="toggle-btn" onClick={toggleSidebar}>
-          {isOpen ? '◀' : '▶'}
-        </button>
-      </div>
+     {isOpen && <img src={BrewsterLogo} alt="Brewster Logo" className="logo-image" />}
+     <button className="toggle-btn" onClick={toggleSidebar}>
+       {isOpen ? '◀' : '▶'}
+     </button>
+   </div>
       
       <nav className="sidebar-nav">
         {menuItems.map((item) => (
