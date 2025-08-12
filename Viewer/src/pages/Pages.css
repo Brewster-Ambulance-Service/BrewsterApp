@@ -711,3 +711,10 @@ input:checked + .toggle-slider:before {
     max-width: 200px;
   }
 }
+
+  .page-actions { 
+    button {
+  margin-left: 900px; 
+  margin-top: -80px;  
+}
+  }
