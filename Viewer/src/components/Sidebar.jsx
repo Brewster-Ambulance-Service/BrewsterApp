@@ -35,17 +35,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       path: '/anomaly-detector'
     },
     {
-      id: 'vehicles',
-      label: 'Vehicle Management',
-      icon: '🚑',
-      path: '/vehicles',
-      subItems: [
-        { id: 'live-location', label: 'Live Location', path: '/vehicles/live' },
-        { id: 'history', label: 'History', path: '/vehicles/history' },
-        { id: 'analytics', label: 'Analytics', path: '/vehicles/analytics' }
-      ]
-    },
-    {
       id: 'reports',
       label: 'Reports',
       icon: '📈',
