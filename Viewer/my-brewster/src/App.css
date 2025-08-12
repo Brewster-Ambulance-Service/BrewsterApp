@@ -1,0 +1,62 @@
+.App {
+  text-align: left;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.main-content {
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.main-content.sidebar-closed {
+  margin-left: 70px;
+}
+
+.content-header {
+  background: white;
+  padding: 20px 30px;
+  border-bottom: 1px solid #e1e5e9;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.content-header h1 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 0;
+  }
+  
+  .content-header {
+    padding: 15px 20px;
+  }
+}
+.content-header {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically */
+}
+
+.brewster-logo {
+  max-height: 200px; /* adjust size if needed */
+  height: auto;
+}
+
+
