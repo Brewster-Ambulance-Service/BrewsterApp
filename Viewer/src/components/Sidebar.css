@@ -12,6 +12,10 @@
   flex-direction: column;
 }
 
+.dark-mode .sidebar {
+  background: linear-gradient(135deg, #001C57 0%, #89CFF0 100%);
+}
+
 .sidebar.open {
   width: 280px;
 }
