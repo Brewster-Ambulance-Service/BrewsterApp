@@ -726,6 +726,29 @@ input:checked + .toggle-slider:before {
   margin-top: -80px;  
 }
   }
+
+/* Vehicle status summary */
+.vehicle-status-summary {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.vehicle-status-summary span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vehicle-status-summary strong {
+  font-weight: 600;
+}
+
+/* Vehicle status summary colors for dark mode */
+.dark-mode .vehicle-status-summary span strong {
+  color: inherit;
+}
 /* Full-width map panel container */
 .map-panel {
   height: 420px;           /* adjust to taste */

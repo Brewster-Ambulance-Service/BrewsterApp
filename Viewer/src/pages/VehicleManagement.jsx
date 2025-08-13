@@ -25,29 +25,7 @@ const VehicleManagement = () => {
       </div>
 
       <div className="content-grid">
-        <div className="content-card">
-          <h3>Vehicle Status Overview</h3>
-          <div className="status-grid">
-            <div className="status-item active">
-              <span className="status-count">3</span>
-              <span className="status-label">Active</span>
-            </div>
-            <div className="status-item on-call">
-              <span className="status-count">1</span>
-              <span className="status-label">On Call</span>
-            </div>
-            <div className="status-item available">
-              <span className="status-count">1</span>
-              <span className="status-label">Available</span>
-            </div>
-            <div className="status-item maintenance">
-              <span className="status-count">1</span>
-              <span className="status-label">Maintenance</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Facility Locations ONLY */}
+        {/* Facility Locations - Now First */}
         <div className="content-card full-width">
           <h3>Facility Locations</h3>
           <div style={{ height: 560, borderRadius: 12, overflow: 'hidden', background: '#eef2f7' }}>
@@ -56,7 +34,15 @@ const VehicleManagement = () => {
         </div>
 
         <div className="content-card full-width">
-          <h3>Vehicle List</h3>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+            <h3>Vehicle List</h3>
+            <div className="vehicle-status-summary">
+              <span><strong style={{ color: '#28a745' }}>3</strong> Active</span>
+              <span><strong style={{ color: '#ffc107' }}>1</strong> On Call</span>
+              <span><strong style={{ color: '#17a2b8' }}>1</strong> Available</span>
+              <span><strong style={{ color: '#dc3545' }}>1</strong> Maintenance</span>
+            </div>
+          </div>
           <div className="table-container">
             <table className="data-table">
               <thead>
