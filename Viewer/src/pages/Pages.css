@@ -726,3 +726,13 @@ input:checked + .toggle-slider:before {
   margin-top: -80px;  
 }
   }
+/* Full-width map panel container */
+.map-panel {
+  height: 420px;           /* adjust to taste */
+  border-radius: 12px;
+  overflow: hidden;
+}
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}

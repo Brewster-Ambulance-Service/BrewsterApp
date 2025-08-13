@@ -8,6 +8,7 @@ import VehicleManagement from './pages/VehicleManagement';
 import Reports from './pages/Reports.jsx';
 import Settings from './pages/Settings';
 import './App.css';
+import 'leaflet/dist/leaflet.css'; // keep Leaflet CSS globally for the embedded map
 
 import { healthCheck, runQuery } from './services/snowflakeApi';
 
@@ -47,7 +48,6 @@ function App() {
 
         <div className={`main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
           <div className="content-header">
-           
             <h1>Brewster EMS Dashboard</h1>
 
             <div className="health-chip" title={health.error || ''}>
@@ -85,7 +85,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/anomaly-detector" element={<AnomalyDetector />} />
-            <Route path="/vehicles" element={<VehicleManagement />} />
+            <Route path="/vehicles" element={<VehicleManagement />} /> {/* map is inside this page */}
             <Route path="/reports" element={<Reports />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>

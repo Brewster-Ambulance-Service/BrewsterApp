@@ -1,13 +1,15 @@
 import React from 'react';
 import './Pages.css';
 
+import MapWidget from '../components/MapWidget';
+
 const VehicleManagement = () => {
   const vehicles = [
-    { id: 1, name: 'Ambulance 01', status: 'Active', location: 'Downtown', lastUpdate: '2 min ago' },
-    { id: 2, name: 'Ambulance 02', status: 'On Call', location: 'North District', lastUpdate: '5 min ago' },
-    { id: 3, name: 'Ambulance 03', status: 'Maintenance', location: 'Garage', lastUpdate: '1 hour ago' },
-    { id: 4, name: 'Ambulance 04', status: 'Active', location: 'South District', lastUpdate: '1 min ago' },
-    { id: 5, name: 'Ambulance 05', status: 'Available', location: 'Central Station', lastUpdate: '10 min ago' },
+    { id: 1, name: 'Ambulance 01', status: 'Active',      location: 'Downtown',        lastUpdate: '2 min ago' },
+    { id: 2, name: 'Ambulance 02', status: 'On Call',     location: 'North District',  lastUpdate: '5 min ago' },
+    { id: 3, name: 'Ambulance 03', status: 'Maintenance', location: 'Garage',          lastUpdate: '1 hour ago' },
+    { id: 4, name: 'Ambulance 04', status: 'Active',      location: 'South District',  lastUpdate: '1 min ago' },
+    { id: 5, name: 'Ambulance 05', status: 'Available',   location: 'Central Station', lastUpdate: '10 min ago' },
   ];
 
   return (
@@ -16,12 +18,12 @@ const VehicleManagement = () => {
         <h1>🚑 Vehicle Management</h1>
         <p>Monitor and manage all emergency vehicles</p>
       </div>
-      
+
       <div className="page-actions">
         <button className="btn-primary">Add New Vehicle</button>
         <button className="btn-secondary">Export Data</button>
       </div>
-      
+
       <div className="content-grid">
         <div className="content-card">
           <h3>Vehicle Status Overview</h3>
@@ -44,7 +46,15 @@ const VehicleManagement = () => {
             </div>
           </div>
         </div>
-        
+
+        {/* Facility Locations ONLY */}
+        <div className="content-card full-width">
+          <h3>Facility Locations</h3>
+          <div style={{ height: 560, borderRadius: 12, overflow: 'hidden', background: '#eef2f7' }}>
+            <MapWidget />
+          </div>
+        </div>
+
         <div className="content-card full-width">
           <h3>Vehicle List</h3>
           <div className="table-container">
@@ -81,6 +91,7 @@ const VehicleManagement = () => {
             </table>
           </div>
         </div>
+
       </div>
     </div>
   );
