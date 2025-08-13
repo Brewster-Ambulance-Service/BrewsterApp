@@ -10,7 +10,7 @@ const Settings = () => {
   return (
     <div className="page-content">
       <div className="page-header">
-        <h1>⚙️ Settings</h1>
+        <h1>Settings</h1>
         <p>Configure your application preferences</p>
       </div>
       

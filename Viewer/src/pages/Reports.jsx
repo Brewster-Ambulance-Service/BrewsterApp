@@ -13,7 +13,7 @@ const Reports = () => {
   return (
     <div className="page-content">
       <div className="page-header">
-        <h1>📈 Reports & Analytics</h1>
+        <h1>Reports & Analytics</h1>
         <p>Generate and view comprehensive reports</p>
         
 

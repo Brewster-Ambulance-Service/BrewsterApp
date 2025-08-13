@@ -15,7 +15,7 @@ const VehicleManagement = () => {
   return (
     <div className="page-content">
       <div className="page-header">
-        <h1>🚑 Vehicle Management</h1>
+        <h1>Vehicle Management</h1>
         <p>Monitor and manage all emergency vehicles</p>
       </div>
 

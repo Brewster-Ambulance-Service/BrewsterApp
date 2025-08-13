@@ -184,7 +184,7 @@ const AnomalyDetector = () => {
   return (
     <div className="page-content">
       <div className="page-header">
-        <h1>🔍 Anomaly Detector</h1>
+        <h1>Anomaly Detector</h1>
         <p>Monitor and analyze employee timekeeping and operational anomalies</p>
       </div>
 
