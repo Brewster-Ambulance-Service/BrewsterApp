@@ -9,6 +9,7 @@ import Reports from './pages/Reports.jsx';
 import Settings from './pages/Settings';
 import './App.css';
 import 'leaflet/dist/leaflet.css'; // keep Leaflet CSS globally for the embedded map
+import { ThemeProvider } from './contexts/ThemeContext';
 
 import { healthCheck, runQuery } from './services/snowflakeApi';
 
@@ -42,11 +43,12 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
-        <div className={`main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+          <div className={`main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
           <div className="content-header">
             <h1>Brewster EMS Dashboard</h1>
 
@@ -92,6 +94,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </ThemeProvider>
   );
 }
 

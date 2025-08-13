@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Pages.css';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Settings = () => {
   const [notifications, setNotifications] = useState(true);
   const [autoRefresh, setAutoRefresh] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, toggleDarkMode } = useTheme();
 
   return (
     <div className="page-content">
@@ -56,7 +57,7 @@ const Settings = () => {
                 <input
                   type="checkbox"
                   checked={darkMode}
-                  onChange={(e) => setDarkMode(e.target.checked)}
+                  onChange={toggleDarkMode}
                 />
                 <span className="toggle-slider"></span>
               </label>
