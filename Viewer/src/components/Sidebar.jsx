@@ -121,8 +121,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <div className="user-info">
             <div className="user-avatar">👤</div>
             <div className="user-details">
-              <div className="user-name">Admin User</div>
-              <div className="user-role">System Administrator</div>
+              <div className="user-name">Steve Dinsmore</div>
+              <div className="user-role">IT Administrator</div>
             </div>
           </div>
         )}
