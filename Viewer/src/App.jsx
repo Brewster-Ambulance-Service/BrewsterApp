@@ -10,6 +10,7 @@ import Settings from './pages/Settings';
 import './App.css';
 import 'leaflet/dist/leaflet.css'; // keep Leaflet CSS globally for the embedded map
 import { ThemeProvider } from './contexts/ThemeContext';
+import BrewsterThreeLogo from './assets/BrewsterThree.png';
 
 import { healthCheck, runQuery } from './services/snowflakeApi';
 
@@ -50,7 +51,9 @@ function App() {
 
           <div className={`main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
           <div className="content-header">
-            <h1>Brewster EMS Dashboard</h1>
+            <h1>
+              <img src={BrewsterThreeLogo} alt="Brewster Three Logo" className="header-logo" />
+            </h1>
 
             <div className="health-chip" title={health.error || ''}>
               <span
