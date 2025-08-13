@@ -198,11 +198,20 @@
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 2px;
+  color: #d0d9e0; 
+}
+
+.dark-mode .user-name {
+  color: #1d0202; 
 }
 
 .user-role {
   font-size: 0.8rem;
-  opacity: 0.8;
+  color: #fffdfd; 
+}
+
+.dark-mode .user-role { 
+  color: #020f1a
 }
 
 /* Responsive Design */
