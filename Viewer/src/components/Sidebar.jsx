@@ -39,22 +39,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       label: 'Vehicle Management',
       icon: '🚑',
       path: '/vehicles',
-      subItems: [
-        { id: 'live-location', label: 'Live Location', path: '/vehicles/live' },
-        { id: 'history', label: 'History', path: '/vehicles/history' },
-        { id: 'analytics', label: 'Analytics', path: '/vehicles/analytics' }
-      ]
     },
     {
       id: 'reports',
       label: 'Reports',
       icon: '📈',
       path: '/reports',
-      subItems: [
-        { id: 'response-times', label: 'Response Times', path: '/reports/response-times' },
-        { id: 'efficiency', label: 'Efficiency Metrics', path: '/reports/efficiency' },
-        { id: 'performance', label: 'Performance', path: '/reports/performance' }
-      ]
     },
     {
       id: 'settings',

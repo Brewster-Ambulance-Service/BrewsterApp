@@ -736,3 +736,77 @@ input:checked + .toggle-slider:before {
   height: 100%;
   width: 100%;
 }
+.chatgpt-landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* horizontal centering */
+  justify-content: flex-start; /* push content towards the top */
+  padding-top: 20vh;        /* adjust this number to move up/down */
+}
+
+.chatgpt-title {
+  position: relative;
+  top: 10px;  
+  color: #eaecef;
+}
+
+
+/* Prompt bar wrapper (pill) */
+.chatgpt-input-wrap {
+  width: min(820px, 92vw);
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #1a1b20;
+  border: 1px solid #2a2b31;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+/* Left plus, right icons */
+.chip {
+  height: 34px;
+  min-width: 34px;
+  border: 1px solid #2a2b31;
+  background: #202127;
+  color: #bfc3c9;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s, transform .06s ease;
+}
+.chip:active { transform: translateY(1px); }
+.chip:hover  { background:#24262d; border-color:#3a3c45; color:#e6e8eb; }
+
+.chip-plus { font-size: 18px; line-height: 0; font-weight: 600; }
+.chip-icon svg { display:block; }
+
+/* Text input */
+.chatgpt-input {
+  width: 100%;
+  height: 36px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e6e8eb;
+  font-size: 14.5px;
+}
+.chatgpt-input::placeholder { color: #8b8f97; }
+
+/* Focus glow on wrapper when input focused */
+.chatgpt-input:focus ~ .chip,
+.chatgpt-input:focus { }
+.chatgpt-input-wrap:focus-within {
+  border-color: #3b82f6;                 /* subtle blue focus ring */
+  box-shadow: 0 0 0 3px rgba(59,130,246,.18);
+}
+
+/* Make it look right on small screens */
+@media (max-width: 480px) {
+  .chatgpt-input-wrap { gap: 8px; padding: 10px 12px; }
+  .chip { height: 30px; min-width: 30px; }
+}

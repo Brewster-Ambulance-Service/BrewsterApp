@@ -63,13 +63,8 @@ function App() {
                   background: health.ok ? '#22c55e' : '#ef4444'
                 }}
               />
-              {health.ok ? 'Snowflake Connected' : 'Snowflake Unavailable'}
               {health.now ? ` · ${new Date(health.now).toLocaleString()}` : ''}
             </div>
-
-            <button className="test-query-btn" onClick={runTest} disabled={testing} style={{ marginLeft: 12 }}>
-              {testing ? 'Running…' : 'Test Query'}
-            </button>
           </div>
 
           {testResult && (
