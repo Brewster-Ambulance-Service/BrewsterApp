@@ -802,7 +802,7 @@ input:checked + .toggle-slider:before {
 .chatgpt-title {
   position: relative;
   top: 10px;  
-  color: #eaecef;
+  color: var(--text-primary);
 }
 
 
