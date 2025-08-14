@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 import BrewsterLogo from '../assets/BrewsterLogo.png';  
+import Steve from '../assets/Steve.jpg'
 import { BotMessageSquare, CircleX, BadgeDollarSign, ClipboardPlus, Ambulance, ChartNoAxesColumn, Settings} from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -135,7 +136,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <div className="sidebar-footer">
         {isOpen && (
           <div className="user-info">
-            <div className="user-avatar">👤</div>
+                         <div className="user-avatar">
+               <img src={Steve} alt="Steve" className="user-avatar-img" />
+             </div>
             <div className="user-details">
               <div className="user-name">Steve Dinsmoor</div>
               <div className="user-role">IT Administrator</div>
