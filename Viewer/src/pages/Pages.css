@@ -907,8 +907,12 @@ input:checked + .toggle-slider:before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-primary);
+  background: linear-gradient(135deg, #89CFF0 0%, #001C57 100%);
   padding: 20px;
+}
+
+.dark-mode .signin-container {
+  background: linear-gradient(135deg, #001C57 0%, #89CFF0 100%);
 }
 
 .signin-card {
