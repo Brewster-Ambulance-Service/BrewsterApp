@@ -8,6 +8,10 @@ import VehicleManagement from './pages/VehicleManagement';
 import Reports from './pages/Reports.jsx';
 import Settings from './pages/Settings';
 import SignIn from './pages/SignIn';
+import ChangePassword from './pages/ChangePassword';
+import UpdateProfile from './pages/UpdateProfile';
+import ExportData from './pages/ExportData';
+import DeleteAccount from './pages/DeleteAccount';
 import './App.css';
 import 'leaflet/dist/leaflet.css'; // keep Leaflet CSS globally for the embedded map
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -101,6 +105,10 @@ function App() {
               <Route path="/vehicles" element={<VehicleManagement />} /> {/* map is inside this page */}
               <Route path="/reports" element={<Reports />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/settings/change-password" element={<ChangePassword />} />
+              <Route path="/settings/update-profile" element={<UpdateProfile />} />
+              <Route path="/settings/export-data" element={<ExportData />} />
+              <Route path="/settings/delete-account" element={<DeleteAccount />} />
               <Route path="/signin" element={<Navigate to="/" replace />} />
             </Routes>
           </div>

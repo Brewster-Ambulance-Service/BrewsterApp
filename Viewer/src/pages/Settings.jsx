@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Pages.css';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -6,6 +7,7 @@ const Settings = () => {
   const [notifications, setNotifications] = useState(true);
   const [autoRefresh, setAutoRefresh] = useState(true);
   const { darkMode, toggleDarkMode } = useTheme();
+  const navigate = useNavigate();
 
   return (
     <div className="page-content">
@@ -92,16 +94,36 @@ const Settings = () => {
           <h3>Account Management</h3>
           <div className="info-list">
             <div className="info-item">
-              <button className="btn-primary">Change Password</button>
+              <button 
+                className="btn-primary" 
+                onClick={() => navigate('/settings/change-password')}
+              >
+                Change Password
+              </button>
             </div>
             <div className="info-item">
-              <button className="btn-secondary">Update Profile</button>
+              <button 
+                className="btn-secondary" 
+                onClick={() => navigate('/settings/update-profile')}
+              >
+                Update Profile
+              </button>
             </div>
             <div className="info-item">
-              <button className="btn-secondary">Export Data</button>
+              <button 
+                className="btn-secondary" 
+                onClick={() => navigate('/settings/export-data')}
+              >
+                Export Data
+              </button>
             </div>
             <div className="info-item">
-              <button className="btn-danger">Delete Account</button>
+              <button 
+                className="btn-danger" 
+                onClick={() => navigate('/settings/delete-account')}
+              >
+                Delete Account
+              </button>
             </div>
           </div>
         </div>
