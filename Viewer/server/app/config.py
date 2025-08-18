@@ -1,11 +1,25 @@
 # app/config.py
 from __future__ import annotations
-from pydantic_settings import BaseSettings
-from pydantic import field_validator, model_validator
+
+from pathlib import Path
 from typing import List, Optional
+
+from pydantic import field_validator, model_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# Resolve .../server/.env no matter where the app is launched from
+_ENV_PATH = (Path(__file__).resolve().parent.parent / ".env").as_posix()
 
 
 class Settings(BaseSettings):
+    # ----- Pydantic v2 settings -----
+    model_config = SettingsConfigDict(
+        env_file=_ENV_PATH,            # load server/.env
+        env_file_encoding="utf-8",
+        case_sensitive=True,           # keep UPPERCASE keys as-is
+        extra="allow",                 # don't explode on extra env vars
+    )
+
     # ---- Environment ----
     # One of: development | staging | production
     ENV: str = "development"
@@ -28,9 +42,14 @@ class Settings(BaseSettings):
     DATABASE_URL: Optional[str] = None
     JWT_SECRET: Optional[str] = None
 
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    # ---- Snowflake ----
+    SNOWFLAKE_ACCOUNT: str | None = None
+    SNOWFLAKE_USER: str | None = None
+    SNOWFLAKE_PASSWORD: str | None = None
+    SNOWFLAKE_ROLE: str | None = None
+    SNOWFLAKE_WAREHOUSE: str | None = None
+    SNOWFLAKE_DATABASE: str | None = None
+    SNOWFLAKE_SCHEMA: str | None = None
 
     # -------- Derived / Helpers --------
     @property

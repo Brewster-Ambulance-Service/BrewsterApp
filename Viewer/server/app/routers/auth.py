@@ -15,4 +15,3 @@ def login_user(data: LoginRequest):
         return {"access_token": "fake-jwt-token", "token_type": "bearer"}
     else:
         raise HTTPException(status_code=401, detail="Invalid credentials")
-
