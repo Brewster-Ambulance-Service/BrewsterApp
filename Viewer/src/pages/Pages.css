@@ -853,8 +853,6 @@ input:checked + .toggle-slider:before {
 .chatgpt-input::placeholder { color: var(--text-secondary); }
 
 /* Focus glow on wrapper when input focused */
-.chatgpt-input:focus ~ .chip,
-.chatgpt-input:focus 
 .chatgpt-input-wrap:focus-within {
   border-color: #89CFF0;                 /* subtle blue focus ring */
   box-shadow: 0 0 0 3px rgba(137, 207, 240, 0.2);
