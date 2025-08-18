@@ -150,7 +150,7 @@ const DeleteAccount = () => {
             <div style={{ fontSize: '3rem', marginBottom: '20px' }}>😏</div>
             <h2 style={{ color: 'var(--text-primary)', marginBottom: '10px' }}>Nu uh!</h2>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>
-              Nice try, but you can't delete your account that easily!
+              Not implementing this right now lol
             </p>
             <button
               onClick={handleCloseNuUh}
