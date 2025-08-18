@@ -87,33 +87,21 @@ const Settings = () => {
           </div>
         </div>
         
-        <div className="content-card full-width">
+
+        <div className="content-card">
           <h3>Account Management</h3>
-          <div className="account-actions">
-            <button className="btn-primary">Change Password</button>
-            <button className="btn-secondary">Update Profile</button>
-            <button className="btn-secondary">Export Data</button>
-            <button className="btn-danger">Delete Account</button>
-          </div>
-        </div>
-        
-        <div className="content-card full-width">
-          <h3>Data Management</h3>
-          <div className="data-actions">
-            <div className="action-group">
-              <h4>Backup & Restore</h4>
-              <button className="btn-secondary">Create Backup</button>
-              <button className="btn-secondary">Restore from Backup</button>
+          <div className="info-list">
+            <div className="info-item">
+              <button className="btn-primary">Change Password</button>
             </div>
-            <div className="action-group">
-              <h4>Data Export</h4>
-              <button className="btn-secondary">Export All Data</button>
-              <button className="btn-secondary">Export Reports</button>
+            <div className="info-item">
+              <button className="btn-secondary">Update Profile</button>
             </div>
-            <div className="action-group">
-              <h4>System</h4>
-              <button className="btn-secondary">Clear Cache</button>
-              <button className="btn-secondary">Reset Settings</button>
+            <div className="info-item">
+              <button className="btn-secondary">Export Data</button>
+            </div>
+            <div className="info-item">
+              <button className="btn-danger">Delete Account</button>
             </div>
           </div>
         </div>

@@ -45,12 +45,15 @@ const SignIn = ({ onSignIn }) => {
       if (!formData.email.includes('@')) {
         throw new Error('Please enter a valid email address');
       }
+      if (formData.password.length < 6) { 
+        throw new Error ('Error: Wrong Password');
+      }
 
       // Simulate authentication delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Not sure if this should be implemented but there is code for it
+      // await new Promise(resolve => setTimeout(resolve, 1000));
 
       // For demo purposes, accept any email/password combination
-      // In a real app, you would validate against your backend
       if (formData.email && formData.password) {
         // Store authentication state (you might use localStorage, cookies, or context)
         localStorage.setItem('isAuthenticated', 'true');

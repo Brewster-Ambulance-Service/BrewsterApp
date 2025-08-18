@@ -51,8 +51,8 @@
 
 .btn-secondary {
   background: white;
-  color: #89CFF0;
-  border: 2px solid #89CFF0;
+  color: #001C57;
+  border: 2px solid #001C57;
   padding: 10px 22px;
   border-radius: 8px;
   font-weight: 600;
@@ -62,7 +62,7 @@
 }
 
 .btn-secondary:hover {
-  background: #89CFF0;
+  background: #001C57;
   color: white;
   transform: translateY(-2px);
 }
@@ -100,8 +100,8 @@
 
 .btn-small {
   background: #f8f9fa;
-  color: #495057;
-  border: 1px solid #dee2e6;
+  color: #001C57;
+  border: 1px solid #001C57;
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -111,8 +111,9 @@
 }
 
 .btn-small:hover {
-  background: #e9ecef;
-  border-color: #adb5bd;
+  background: #001C57;
+  color: white;
+  border-color: #001C57;
 }
 
 /* Dark mode small button styles */
