@@ -19,12 +19,12 @@ const DeleteAccount = () => {
   const handleConfirmDelete = () => {
     setIsLoading(true);
     
-    // Simulate processing
+    //Simulate processing
     setTimeout(() => {
       setIsLoading(false);
       setShowWarning(false);
       setShowNuUh(true);
-    }, 1500);
+    }, 15);
   };
 
   // Handles canceling the deletion
@@ -52,7 +52,7 @@ const DeleteAccount = () => {
         <p>Permanently delete your account and all associated data</p>
       </div>
 
-      <div className="content-card" style={{ maxWidth: '500px' }}>
+      <div className="content-card" style={{ maxWidth: '5000px' }}>
         <div style={{ textAlign: 'center', padding: '20px' }}>
           <XCircle size={64} style={{ color: '#e74c3c', marginBottom: '20px' }} />
           <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>Danger Zone</h3>
@@ -69,7 +69,7 @@ const DeleteAccount = () => {
             Delete My Account
           </button>
         </div>
-      </div>
+      </div>  
 
       {/* Warning Modal */}
       {showWarning && (
@@ -156,7 +156,7 @@ const DeleteAccount = () => {
               onClick={handleCloseNuUh}
               className="btn-primary"
             >
-              Fine, I'll stay
+              lol fair enough
             </button>
           </div>
         </div>
