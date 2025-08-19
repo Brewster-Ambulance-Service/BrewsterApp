@@ -1,4 +1,10 @@
-fastapi
-uvicorn
-python-dotenv
 snowflake-connector-python[pandas]
+
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg[binary]
+python-dotenv
+passlib[bcrypt]
+python-jose[cryptography]
+pydantic[email]
