@@ -41,12 +41,12 @@ const SignIn = ({ onSignIn }) => {
       if (!formData.email || !formData.password) {
         throw new Error('Please fill in all fields');
       }
-
+      // needs a proper email
       if (!formData.email.includes('@')) {
         throw new Error('Please enter a valid email address');
       }
       if (formData.password.length < 6) { 
-        throw new Error ('Error: Wrong Password');
+        throw new Error ('Error: Password Too Short');
       }
 
       // Simulate authentication delay
@@ -75,7 +75,7 @@ const SignIn = ({ onSignIn }) => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
+  //Sign in container
   return (
     <div className="signin-container">
       <div className="signin-card">
@@ -91,7 +91,7 @@ const SignIn = ({ onSignIn }) => {
               {error}
             </div>
           )}
-
+          {/* input for email adress */}
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
             <div className="input-wrapper">
@@ -108,7 +108,7 @@ const SignIn = ({ onSignIn }) => {
               />
             </div>
           </div>
-
+            {/* input for your password */}
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <div className="input-wrapper">
@@ -123,6 +123,7 @@ const SignIn = ({ onSignIn }) => {
                 required
                 className="form-input"
               />
+              {/* calls back to toggle passwords */}
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
@@ -141,7 +142,7 @@ const SignIn = ({ onSignIn }) => {
             </label>
             <a href="#" className="forgot-password">Forgot password?</a>
           </div>
-
+          {/* submit your information to sign in */}
           <button
             type="submit"
             disabled={isLoading}
@@ -152,7 +153,7 @@ const SignIn = ({ onSignIn }) => {
         </form>
 
         <div className="signin-footer">
-          <p>Don't have an account? <a href="#" className="signup-link">Contact your administrator</a></p>
+          <p>Don't have an account? <a href="#" className="signup-link">Please contact Steve Dinsmoor</a></p>
         </div>
       </div>
     </div>

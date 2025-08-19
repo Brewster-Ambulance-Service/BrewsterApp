@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { User, Mail, Phone, MapPin, ArrowLeft, Save } from 'lucide-react';
 import './Pages.css';
 
+// Example Profile used
 const UpdateProfile = () => {
   const [formData, setFormData] = useState({
     firstName: 'Steve',
@@ -45,7 +46,7 @@ const UpdateProfile = () => {
       setIsLoading(false);
       return;
     }
-
+    // Needs Email
     if (!formData.email.includes('@')) {
       setError('Please enter a valid email address');
       setIsLoading(false);
@@ -58,7 +59,7 @@ const UpdateProfile = () => {
       setIsLoading(false);
     }, 1500);
   };
-
+// Back to settings button
   return (
     <div className="page-content">
       <div className="page-header">
@@ -66,10 +67,11 @@ const UpdateProfile = () => {
           onClick={() => navigate('/settings')} 
           className="btn-secondary"
           style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}
-        >
+        > 
           <ArrowLeft size={16} />
           Back to Settings
         </button>
+        {/* Header information */}
         <h1>Update Profile</h1>
         <p>Update your personal information and account details</p>
       </div>
@@ -78,7 +80,7 @@ const UpdateProfile = () => {
         <form onSubmit={handleSubmit} className="signin-form">
           {error && <div className="error-message">{error}</div>}
           {success && <div className="error-message" style={{ background: '#d4edda', borderColor: '#c3e6cb', color: '#155724' }}>{success}</div>}
-
+          {/* First name input */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div className="form-group">
               <label htmlFor="firstName">First Name</label>
@@ -96,7 +98,7 @@ const UpdateProfile = () => {
                 />
               </div>
             </div>
-
+          {/* Last Name Input */}
             <div className="form-group">
               <label htmlFor="lastName">Last Name</label>
               <div className="input-wrapper">
@@ -114,7 +116,7 @@ const UpdateProfile = () => {
               </div>
             </div>
           </div>
-
+        {/* email address input */}
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
             <div className="input-wrapper">
@@ -131,7 +133,7 @@ const UpdateProfile = () => {
               />
             </div>
           </div>
-
+        {/* Phone number input */}
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
             <div className="input-wrapper">
@@ -147,7 +149,7 @@ const UpdateProfile = () => {
               />
             </div>
           </div>
-
+        {/* Department name input */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div className="form-group">
               <label htmlFor="department">Department</label>
@@ -164,7 +166,7 @@ const UpdateProfile = () => {
                 />
               </div>
             </div>
-
+          {/* Title/Position input */}
             <div className="form-group">
               <label htmlFor="position">Position</label>
               <div className="input-wrapper">
@@ -181,7 +183,7 @@ const UpdateProfile = () => {
               </div>
             </div>
           </div>
-
+          {/* Location of work input */}
           <div className="form-group">
             <label htmlFor="location">Location</label>
             <div className="input-wrapper">
@@ -197,7 +199,7 @@ const UpdateProfile = () => {
               />
             </div>
           </div>
-
+          {/* Personal Biographical Input */}
           <div className="form-group">
             <label htmlFor="bio">Bio</label>
             <textarea
@@ -211,7 +213,7 @@ const UpdateProfile = () => {
               style={{ resize: 'vertical', padding: '12px', fontFamily: 'inherit' }}
             />
           </div>
-
+        {/* Update profile button */}
           <button
             type="submit"
             disabled={isLoading}

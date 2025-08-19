@@ -1,6 +1,8 @@
 import React from 'react';
 import './Pages.css';
 
+
+
 const Dashboard = () => {
   return (
     <div className="chatgpt-landing">
@@ -15,6 +17,7 @@ const Dashboard = () => {
           placeholder="Ask anything"
           aria-label="Ask anything"
         />
+        
 
         <button className="chip chip-icon" aria-label="voice input">
           {/* mic icon */}
