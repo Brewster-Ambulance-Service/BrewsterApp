@@ -18,13 +18,13 @@ const ExportData = () => {
   // Sample user data for demonstration
   const users = [
     { id: 1, name: 'Steve Dinsmoor', email: 'steve.dinsmoor@brewster.com', role: 'IT Administrator', department: 'IT' },
-    { id: 2, name: 'Sarah Johnson', email: 'sarah.johnson@brewster.com', role: 'EMT', department: 'Operations' },
-    { id: 3, name: 'Mike Rodriguez', email: 'mike.rodriguez@brewster.com', role: 'Paramedic', department: 'Operations' },
-    { id: 4, name: 'Lisa Chen', email: 'lisa.chen@brewster.com', role: 'Dispatcher', department: 'Dispatch' },
-    { id: 5, name: 'David Wilson', email: 'david.wilson@brewster.com', role: 'EMT', department: 'Operations' },
-    { id: 6, name: 'Jennifer Brown', email: 'jennifer.brown@brewster.com', role: 'Paramedic', department: 'Operations' },
-    { id: 7, name: 'Robert Taylor', email: 'robert.taylor@brewster.com', role: 'Supervisor', department: 'Management' },
-    { id: 8, name: 'Amanda Davis', email: 'amanda.davis@brewster.com', role: 'EMT', department: 'Operations' }
+    { id: 2, name: 'Sarah Candio', email: 'sarah.johnson@brewster.com', role: 'EMT', department: 'Operations' },
+    { id: 3, name: 'Mark Brewster', email: 'mike.rodriguez@brewster.com', role: 'Paramedic', department: 'Operations' },
+    { id: 4, name: 'Jeff Cronin', email: 'lisa.chen@brewster.com', role: 'Dispatcher', department: 'Dispatch' },
+    { id: 5, name: 'James Troy Mayer', email: 'david.wilson@brewster.com', role: 'EMT', department: 'Operations' },
+    { id: 6, name: 'Jason Smith', email: 'jennifer.brown@brewster.com', role: 'Paramedic', department: 'Operations' },
+    { id: 7, name: 'Chris DiBona', email: 'robert.taylor@brewster.com', role: 'Supervisor', department: 'Management' },
+    { id: 8, name: 'Patric Fahey', email: 'amanda.davis@brewster.com', role: 'EMT', department: 'Operations' }
   ];
 
   // Handles user selection for export
@@ -72,9 +72,9 @@ const ExportData = () => {
     setTimeout(() => {
       setSuccess(`Successfully exported data for ${selectedUsers.length} user(s) in ${exportFormat.toUpperCase()} format!`);
       setIsLoading(false);
-    }, 2000);
+    }, 200);
   };
-
+  // Settings button and header
   return (
     <div className="page-content">
       <div className="page-header">
@@ -107,6 +107,7 @@ const ExportData = () => {
                   className="form-input"
                 />
               </div>
+              {/* Choosing Date Range */}
               <div className="input-wrapper">
                 <Calendar className="input-icon" size={18} />
                 <input
@@ -118,7 +119,7 @@ const ExportData = () => {
               </div>
             </div>
           </div>
-
+        {/* Choose Which Format to Export (JSON, CSV, Excel) */}
           <div className="form-group">
             <label>Export Format</label>
             <div style={{ display: 'flex', gap: '15px', marginTop: '8px' }}>
@@ -157,14 +158,14 @@ const ExportData = () => {
               </label>
             </div>
           </div>
-
+          {/* Text for succesfully exporting the data (Green) */}
           {success && (
             <div className="error-message" style={{ background: '#d4edda', borderColor: '#c3e6cb', color: '#155724', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <CheckCircle size={16} />
               {success}
             </div>
           )}
-
+          {/* Export Data Button */}
           <button
             onClick={handleExport}
             disabled={isLoading || selectedUsers.length === 0}
@@ -187,7 +188,7 @@ const ExportData = () => {
               {selectedUsers.length === users.length ? 'Deselect All' : 'Select All'}
             </button>
           </div>
-
+            
           <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
             {users.map(user => (
               <div
