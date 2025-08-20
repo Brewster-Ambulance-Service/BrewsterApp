@@ -1,0 +1,11 @@
+[build]
+  # Make Netlify run the build INSIDE the Viewer folder
+  base    = "Viewer"
+  command = "npm ci && npm run build"
+  publish = "dist"    # relative to base => Viewer/dist
+
+# Single Page App fallback (Vite + React)
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 200
