@@ -1,0 +1,44 @@
+/* src/components/animated-content.css */
+
+.animated-content {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition-property: opacity, transform;
+    transition-duration: var(--ac-duration, 0.5s);
+    transition-timing-function: ease-out;
+    transition-delay: var(--ac-delay, 0s);
+  }
+  
+  /* Directional variants */
+  .from-up {
+    transform: translate3d(0, 1em, 0);
+  }
+  .from-down {
+    transform: translate3d(0, -1em, 0);
+  }
+  .from-left {
+    transform: translate3d(-1em, 0, 0);
+  }
+  .from-right {
+    transform: translate3d(1em, 0, 0);
+  }
+  .from-fade {
+    transform: none;
+  }
+  
+  /* When active, reset transform and fade in */
+  .animated-content.is-in {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Accessibility: reduce motion if user prefers */
+  @media (prefers-reduced-motion: reduce) {
+    .animated-content,
+    .animated-content.is-in {
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+  

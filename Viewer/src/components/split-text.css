@@ -1,0 +1,63 @@
+.split-text {
+    display: inline-block;
+    position: relative;
+  }
+  
+  /* Each character animates individually */
+  .split-text .char {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 0.5em, 0); /* default for 'up' */
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    animation-name: split-in-up;
+    animation-duration: var(--dur, 0.6s);
+    animation-timing-function: cubic-bezier(.2,.7,.2,1);
+    animation-fill-mode: both;
+    animation-delay: calc(var(--delay, 0s) + var(--char-i) * var(--stagger, 0.035s));
+  }
+  
+  /* Activate on mount */
+  .split-text.is-in .char { /* the rules above already define animation */ }
+  
+  /* Variants */
+  .split-text[data-animate-from="down"] .char {
+    transform: translate3d(0, -0.5em, 0);
+    animation-name: split-in-down;
+  }
+  .split-text[data-animate-from="fade"] .char {
+    transform: none;
+    animation-name: split-in-fade;
+  }
+  
+  /* Keyframes */
+  @keyframes split-in-up {
+    from { opacity: 0; transform: translate3d(0, 0.5em, 0) }
+    to   { opacity: 1; transform: translate3d(0, 0, 0) }
+  }
+  @keyframes split-in-down {
+    from { opacity: 0; transform: translate3d(0, -0.5em, 0) }
+    to   { opacity: 1; transform: translate3d(0, 0, 0) }
+  }
+  @keyframes split-in-fade {
+    from { opacity: 0 }
+    to   { opacity: 1 }
+  }
+  
+  /* Accessibility: respect user motion prefs */
+  @media (prefers-reduced-motion: reduce) {
+    .split-text .char {
+      animation: none !important;
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  /* Screen-reader only utility */
+  .sr-only{
+    position:absolute !important;
+    height:1px; width:1px;
+    overflow:hidden; clip:rect(1px,1px,1px,1px);
+    white-space:nowrap; border:0; padding:0; margin:-1px;
+  }
+  

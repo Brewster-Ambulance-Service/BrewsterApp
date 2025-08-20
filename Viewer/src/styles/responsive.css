@@ -1,0 +1,118 @@
+/* ========== Dashboard responsive (scoped) ========== */
+/* Scope everything to .dashboard-page so other pages stay untouched */
+.dashboard-page {
+    /* tune this to your actual docked sidebar width */
+    --sidebar-w: 300px;
+  
+    /* fluid scales */
+    --space: clamp(12px, 1.6vw, 28px);
+    --space-sm: clamp(8px, 1.2vw, 18px);
+    --fs-title: clamp(22px, 4.2vw, 40px);
+    --fs-body: clamp(14px, 1.6vw, 18px);
+  
+    /* input sizing */
+    --input-h: clamp(44px, 6.5vw, 64px);
+    --input-radius: clamp(18px, 4vw, 32px);
+  }
+  
+  /* main content container, leaves room for a docked sidebar */
+  .dashboard-page .page-wrap {
+    max-width: min(1100px, 100vw - var(--space) * 2);
+    margin-inline: clamp(12px, 3vw, 32px);
+    padding-block: clamp(24px, 4vw, 48px);
+    margin-left: calc(var(--sidebar-w) + clamp(8px, 1.2vw, 20px));
+  }
+  
+  /* if your sidebar switches to an overlay/drawer on smaller screens */
+  @media (max-width: 1024px) {
+    .dashboard-page .page-wrap {
+      margin-left: clamp(12px, 3vw, 24px);
+    }
+  }
+  
+  /* title + base copy scale */
+  .dashboard-page .chatgpt-title {
+    font-size: var(--fs-title);
+    line-height: 1.15;
+    margin-bottom: var(--space);
+  }
+  .dashboard-page .chatgpt-landing {
+    font-size: var(--fs-body);
+  }
+  
+  /* input row: [+] [input] [mic] [eq] */
+  .dashboard-page .chatgpt-input-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: var(--space-sm);
+    width: min(900px, 100%);
+    max-width: min(900px, 92vw);
+  }
+  
+  /* super narrow: hide [+] and keep controls usable */
+  @media (max-width: 640px) {
+    .dashboard-page .chatgpt-input-wrap {
+      grid-template-columns: 1fr auto auto; /* [input] [mic] [eq] */
+    }
+    .dashboard-page .chatgpt-input-wrap .chip-plus {
+      display: none;
+    }
+  }
+  
+  /* input + chip sizes */
+  .dashboard-page .chatgpt-input {
+    height: var(--input-h);
+    padding-inline: clamp(14px, 2.2vw, 24px);
+    border-radius: var(--input-radius);
+  }
+  .dashboard-page .chip,
+  .dashboard-page .chip-icon,
+  .dashboard-page .chip-plus {
+    height: var(--input-h);
+    min-width: var(--input-h);
+    border-radius: var(--input-radius);
+    font-size: clamp(14px, 1.6vw, 16px);
+  }
+  .dashboard-page .chip-icon svg,
+  .dashboard-page .chip-plus svg {
+    width: clamp(16px, 2vw, 20px);
+    height: clamp(16px, 2vw, 20px);
+  }
+  
+  /* optional: if you add a class when the sidebar is collapsed to a rail */
+  .dashboard-page.sidebar-collapsed .page-wrap {
+    margin-left: clamp(12px, 3vw, 24px);
+  }
+  
+  /* accessibility: reduce motion if user prefers */
+  @media (prefers-reduced-motion: reduce) {
+    .dashboard-page * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  
+  /* avoid micro-fonts on ultra-small devices */
+  @media (max-width: 360px) {
+    .dashboard-page { --fs-body: 14px; }
+  }
+  
+  .dashboard-hero{
+    min-height: min(70vh, 900px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 3.5vw, 32px);
+    text-align: center;
+    margin-inline: auto;
+  }
+  .hero-title{ margin: 0; text-align: center; max-width: 22ch; }
+  .hero-input{ margin-inline: auto; width: min(920px, 90vw); }
+  
+  @media (max-width: 640px){
+    .dashboard-hero{ min-height: auto; padding-block: clamp(24px, 6vw, 40px); gap: clamp(14px, 4vw, 22px); }
+    .hero-title{ max-width: 100%; }
+    .hero-input{ width: min(100%, 94vw); }
+  }
+  

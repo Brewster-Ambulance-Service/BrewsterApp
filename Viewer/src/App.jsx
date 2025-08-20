@@ -20,7 +20,7 @@ import BrewsterThreeLogo from './assets/BrewsterThree.png';
 import { healthCheck, runQuery } from './services/snowflakeApi';
 
 function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [health, setHealth] = useState({ ok: false, now: null, error: null });
   const [testResult, setTestResult] = useState(null);
   const [testing, setTesting] = useState(false);
