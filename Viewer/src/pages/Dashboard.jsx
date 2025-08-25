@@ -12,7 +12,7 @@ const Dashboard = () => {
       {/* Aurora background (fixed to viewport) */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <Aurora
-          colorStops={["#3A29FF", "#89CFF0", "#FF3232"]}
+          colorStops={["#1338BE", "#1F456E", "#52B2BF"]}
           blend={0.5}
           amplitude={1.0}
           speed={0.5}
