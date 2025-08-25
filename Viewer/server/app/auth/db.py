@@ -3,7 +3,6 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
-export SUPABASE_ACCESS_TOKEN = sbp_39dc2c1f8e7b2a504f3d95d2e7810ff11efddf00
 # Load environment variables early
 load_dotenv()
 
